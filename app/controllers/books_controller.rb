@@ -8,4 +8,10 @@ class BooksController < ApplicationController
   def show
     @book = Book.find(params[:id])
   end
+
+  def about; end
+
+  def category
+    @category = Book.genre.order(:name)
+  end
 end

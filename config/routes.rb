@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'authors/show'
   get 'employees/index'
   get 'employees/show'
+  get 'books/about'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   root to: 'books#index'
