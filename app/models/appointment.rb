@@ -4,5 +4,5 @@ class Appointment < ApplicationRecord
   belongs_to :employee
   belongs_to :author
 
-  validates :scheduled, presence: true
+  validates :shcedule, presence: true
 end

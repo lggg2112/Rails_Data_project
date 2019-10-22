@@ -1,2 +1,46 @@
-<h1>Publishers#show</h1>
-<p>Find me in app/views/publishers/show.html.erb</p>
+<nav class="navbar navbar-expand-xl navbar-dark bg-dark fixed-top">
+     <a class="navbar-brand" href="/">Online Book Library</a>
+     <div class="collapse navbar-collapse"  id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+           <a class="nav-link" href="/">Books</a>
+        </li>
+        <li class="nav-item "">
+          <a class="nav-link" href="/authors/">Authors</a>
+        </li>
+        <li class="nav-item "">
+          <a class="nav-link" href="/publishers/">Publishers</a>
+        </li>
+        <li class="nav-item "">
+          <a class="nav-link" href="/employees/">Employees</a>
+        </li>
+      </ul>
+    </div>
+</nav>
+
+<div class="container">
+  <p id="notice"></p>
+    <h1><%=@publisher.name %></h1>
+</div>
+<h3>Author</h3>
+  <ul>
+  <% @publisher.authors.each do |author| %>
+    <li><%= link_to author.name, author %></li>
+  <% end %>
+</ul>
+
+<h3>Employee</h3>
+<ul>
+  <% @publisher.employees.each do |employee| %>
+    <li><%= link_to employee.name, employee %></li>
+  <% end %>
+</ul>
+
+ <h3>Books</h3>
+<ul>
+  <% @publisher.books.each do |book| %>
+    <li><%= link_to book.title, book %></li>
+  <% end %>
+</ul>
+
+<p><%= link_to 'Home', root_path %></p>

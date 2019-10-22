@@ -25,4 +25,7 @@
 
 <% @authors.each do |author| %>
   <p><%= author.name %></p>
+  <p>For a list of authors in this publisher, <%= link_to 'click here', author %>.</p>
 <% end %>
+
+<p><%= link_to 'Home', root_path %></p>

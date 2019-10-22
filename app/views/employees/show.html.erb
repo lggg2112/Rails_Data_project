@@ -1,2 +1,27 @@
-<h1>Employees#show</h1>
-<p>Find me in app/views/employees/show.html.erb</p>
+<nav class="navbar navbar-expand-xl navbar-dark bg-dark fixed-top">
+     <a class="navbar-brand" href="/">Online Book Library</a>
+     <div class="collapse navbar-collapse"  id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+           <a class="nav-link" href="/">Books</a>
+        </li>
+        <li class="nav-item "">
+          <a class="nav-link" href="/authors/">Authors</a>
+        </li>
+        <li class="nav-item "">
+          <a class="nav-link" href="/publishers/">Publishers</a>
+        </li>
+      </ul>
+    </div>
+</nav>
+
+<div class="container">
+  <p id="notice"></p>
+    <h1><%=@employee.name %></h1>
+</div>
+<P><%=@employee.address %></P>
+<P><%=@employee.email %></P>
+<P><%=@employee.phonenumber %></P>
+<P><%=@employee.position %></P>
+
+<p><%= link_to 'Home', root_path %></p>

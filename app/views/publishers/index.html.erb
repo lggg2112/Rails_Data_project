@@ -25,4 +25,7 @@
 
 <% @publishers.each do |publisher| %>
   <p><%= publisher.name %></p>
+  <p>For a list of publisher, <%= link_to 'click here', publisher %></p>
 <% end %>
+
+<p><%= link_to 'Home', root_path %></p>

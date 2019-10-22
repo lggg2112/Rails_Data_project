@@ -2,6 +2,7 @@
 
 class Author < ApplicationRecord
   belongs_to :publisher
+  has_many :books
   has_many :appointments
   has_many :employees, through: :appointments
 

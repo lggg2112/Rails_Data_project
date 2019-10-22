@@ -6,10 +6,13 @@
            <a class="nav-link" href="/">Books</a>
         </li>
         <li class="nav-item "">
-          <a class="nav-link" href="/authors/index">Authors</a>
+          <a class="nav-link" href="/authors/">Authors</a>
         </li>
         <li class="nav-item "">
-          <a class="nav-link" href="/publishers/index">Publishers</a>
+          <a class="nav-link" href="/publishers/">Publishers</a>
+        </li>
+        <li class="nav-item "">
+          <a class="nav-link" href="/employees/">Employees</a>
         </li>
       </ul>
     </div>
@@ -19,18 +22,13 @@
   <p id="notice"></p>
     <h1><%=@author.name %></h1>
 </div>
-<div class="container">
-  <p><%=@author.address %></p>
-  <p><%=@author.email %></p>
-  <p><%=@author.phonenumber %></p>
-  <p><%=@author.nationality %></p>
-</div>
-<h3>Books</h3>
-<ul>
-  <% @author.books.each do |book| %>
-    <li><%= link_to book.title, book %></li>
-  <% end %>
-</ul>
+<P><%=@author.address %></P>
+<P><%=@author.email %></P>
+<P><%=@author.phonenumber %></P>
+<P><%=@author.nationality %></P>
 
+
+<h3>Books</h3>
 
 <p><%= link_to 'Home', root_path %></p>
+
