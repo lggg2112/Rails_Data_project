@@ -48,6 +48,9 @@ rand(10..20).times do
   Appointment.create(author: a, employee: e, shcedule: shcedule)
 end
 
+Page.create(title: 'About Us', content: 'Please fill this in.', permalink: 'about_us')
+Page.create(title: 'Frequently Asked Questions', content: 'Please fill this in.', permalink: 'faq')
+
 puts "Generated #{Publisher.count} Publishers."
 puts "Generated #{Author.count} Authors."
 puts "Generated #{Employee.count} Employees."
