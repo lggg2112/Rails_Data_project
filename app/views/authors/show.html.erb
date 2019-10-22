@@ -1,2 +1,36 @@
-<h1>Authors#show</h1>
-<p>Find me in app/views/authors/show.html.erb</p>
+<nav class="navbar navbar-expand-xl navbar-dark bg-dark fixed-top">
+     <a class="navbar-brand" href="/">Online Book Library</a>
+     <div class="collapse navbar-collapse"  id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+           <a class="nav-link" href="/">Books</a>
+        </li>
+        <li class="nav-item "">
+          <a class="nav-link" href="/authors/index">Authors</a>
+        </li>
+        <li class="nav-item "">
+          <a class="nav-link" href="/publishers/index">Publishers</a>
+        </li>
+      </ul>
+    </div>
+</nav>
+
+<div class="container">
+  <p id="notice"></p>
+    <h1><%=@author.name %></h1>
+</div>
+<div class="container">
+  <p><%=@author.address %></p>
+  <p><%=@author.email %></p>
+  <p><%=@author.phonenumber %></p>
+  <p><%=@author.nationality %></p>
+</div>
+<h3>Books</h3>
+<ul>
+  <% @author.books.each do |book| %>
+    <li><%= link_to book.title, book %></li>
+  <% end %>
+</ul>
+
+
+<p><%= link_to 'Home', root_path %></p>

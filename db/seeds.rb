@@ -8,7 +8,7 @@ ActiveRecord::Base.connection.disable_referential_integrity do
   Employee.destroy_all
 end
 
-number_of_publisher = rand(10..15)
+number_of_publisher = rand(10..25)
 
 number_of_publisher.times do
   publisher = Publisher.create(
@@ -20,25 +20,6 @@ number_of_publisher.times do
   number_of_authors = rand(1..15)
   number_of_employees = rand(1..4)
 
-  number_of_authors.times do
-    publisher.authors.build(
-      name: Faker::Book.unique.author,
-      address: Faker::Address.unique.full_address,
-      email: Faker::Internet.unique.email,
-      phonenumber: Faker::PhoneNumber.unique.phone_number,
-      nationality: Faker::Nation.nationality
-    ).save
-    # number_of_books = rand(1..10)
-
-    # number_of_books.times do
-    # publisher.authors.books.build(
-    #   title: Faker::Book.unique.title,
-    #   genre: Faker::Book.genre,
-    #   pubdate: Faker::Time.backward(years: rand(1..10)),
-    #   isbn: Faker::Number.within(range: 1..1_999_999_999_999)
-    # ).save
-  end
-
   number_of_employees.times do
     publisher.employees.build(
       name: Faker::Name.unique.name,
@@ -48,8 +29,21 @@ number_of_publisher.times do
       position: Faker::Job.position
     ).save
   end
+
+  number_of_authors.times do
+    publisher.authors.build(
+      name: Faker::Book.unique.author,
+      address: Faker::Address.unique.full_address,
+      email: Faker::Internet.unique.email,
+      phonenumber: Faker::PhoneNumber.unique.phone_number,
+      nationality: Faker::Nation.nationality
+    ).save
+  end
 end
 
 puts "Generated #{Publisher.count} Publishers."
 puts "Generated #{Author.count} Authors."
 puts "Generated #{Employee.count} Employees."
+
+# Page.create(title: 'About US', content: 'Please fill this in', permalink: 'about_us')
+# Page.create(title: 'Frequently Asked Questions', content: 'Please fill this in', permalink: 'faq')
