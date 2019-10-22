@@ -41,9 +41,17 @@ number_of_publisher.times do
   end
 end
 
+rand(10..20).times do
+  a = Author.all.sample
+  e = Employee.all.sample
+  shcedule = Faker::Time.forward(days: rand(1..60), period: :morning)
+  Appointment.create(author: a, employee: e, shcedule: shcedule)
+end
+
 puts "Generated #{Publisher.count} Publishers."
 puts "Generated #{Author.count} Authors."
 puts "Generated #{Employee.count} Employees."
+puts "Generated #{Appointment.count} appointments."
 
-# Page.create(title: 'About US', content: 'Please fill this in', permalink: 'about_us')
-# Page.create(title: 'Frequently Asked Questions', content: 'Please fill this in', permalink: 'faq')
+Page.create(title: 'About US', content: 'Please fill this in', permalink: 'about_us')
+Page.create(title: 'Frequently Asked Questions', content: 'Please fill this in', permalink: 'faq')
