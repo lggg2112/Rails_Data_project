@@ -1,10 +1,9 @@
 <div class="container">
   <p id="notice"></p>
     <h1>Authors</h1>
-</div>
 
 <% @authors.each do |author| %>
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Name</th>
@@ -18,11 +17,11 @@
 
   <tbody>
       <tr>
-        <td><%= link_to author.name, author  %></td>
-        <td><%= link_to author.address, author  %></td>
-        <td><%= link_to author.email, author %></td>
-        <td><%= link_to author.phonenumber, author %></td>
-        <td><%= link_to author.nationality, author %></td>
+        <td><div class="crop"><%= link_to author.name, author  %></div></td>
+        <td><div class="crop"><%= link_to author.address, author  %></div></td>
+        <td><div class="crop"><%= link_to author.email, author %></div></td>
+        <td><div class="crop"><%= link_to author.phonenumber, author %></div></td>
+        <td><div class="crop"><%= link_to author.nationality, author %></div></td>
         <td><%= link_to 'show', author %></td>
         <td><%= link_to 'edit', author %></td>
         <td><a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/pages/1">Destroy</a></td>
@@ -30,5 +29,7 @@
   </tbody>
 </table>
 <% end %>
+
+</div>
 
 <p><%= link_to 'Home', root_path %></p>

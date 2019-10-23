@@ -1,10 +1,10 @@
 <div class="container">
   <p id="notice"></p>
-    <h1>Publishers</h1>
-</div>
+    <h1>Employees</h1>
+
 
 <% @employees.each do |employee| %>
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Name</th>
@@ -18,11 +18,11 @@
 
   <tbody>
       <tr>
-        <td><%= link_to employee.name, employee  %></td>
-        <td><%= link_to employee.address, employee  %></td>
-        <td><%= link_to employee.email, employee %></td>
-        <td><%= link_to employee.phonenumber, employee %></td>
-        <td><%= link_to employee.position, employee %></td>
+        <td><div class="crop"><%= link_to employee.name, employee  %></div></td>
+        <td><div class="crop"><%= link_to employee.address, employee  %></div></td>
+        <td><div class="crop"><%= link_to employee.email, employee %></div></td>
+        <td><div class="crop"><%= link_to employee.phonenumber, employee %></div></td>
+        <td><div class="crop"><%= link_to employee.position, employee %></div></td>
         <td><%= link_to 'show', employee %></td>
         <td><%= link_to 'edit', employee %></td>
         <td><a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/pages/1">Destroy</a></td>
@@ -32,3 +32,5 @@
 <% end %>
 
 <p><%= link_to 'Home', root_path %></p>
+
+</div>

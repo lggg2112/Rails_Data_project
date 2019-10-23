@@ -1,10 +1,10 @@
 <div class="container">
   <p id="notice"></p>
     <h1>Publishers</h1>
-</div>
+
 
 <% @publishers.each do |publisher| %>
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Name</th>
@@ -17,10 +17,10 @@
 
   <tbody>
       <tr>
-        <td><%= link_to publisher.name, publisher  %></td>
-        <td><%= link_to publisher.address, publisher  %></td>
-        <td><%= link_to publisher.email, publisher %></td>
-        <td><%= link_to publisher.phonenumber, publisher %></td>
+        <td><div class="crop"><%= link_to publisher.name, publisher  %></div></td>
+        <td><div class="crop"><%= link_to publisher.address, publisher  %></div></td>
+        <td><div class="crop"><%= link_to publisher.email, publisher %></div></td>
+        <td><div class="crop"><%= link_to publisher.phonenumber, publisher %></div></td>
         <td><%= link_to 'show', publisher %></td>
         <td><%= link_to 'edit', publisher %></td>
         <td><a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/pages/1">Destroy</a></td>
@@ -28,5 +28,6 @@
   </tbody>
 </table>
 <% end %>
-
 <p><%= link_to 'Home', root_path %></p>
+</div>
+

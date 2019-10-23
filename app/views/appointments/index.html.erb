@@ -1,14 +1,32 @@
-<h1>Appointments</h1>
-
-<% if @appointments.empty? %>
-  <p>There are no appointments.</p>
+<div class="container">
+  <p id="notice"></p>
+    <h1>Appointments</h1>
+<% if @appointments.empty?%>
+  <p> There are no Appointments </p>
 <% else %>
-  <ul>
-  <% @appointments.each do |appointment| %>
-    <li>
-      <%= link_to appointment.author.name, appointment.author %> will be meeting with
-      <%= link_to appointment.employee.name, appointment.employee %> on <%= appointment.shcedule %>.
-    </li>
-  <% end %>
-  </ul>
+<% @appointments.each do |appointment| %>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Author Name</th>
+      <th>Employee Nmae</th>
+      <th>Time</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td><div class="crop"><%= link_to appointment.author.name, appointment.author  %></div></td>
+        <td><div class="crop"><%= link_to appointment.employee.name, appointment.employee  %></div></td>
+        <td><div class="crop"><%= appointment.shcedule %></div></td>
+        <td><a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/pages/1">Destroy</a></td>
+      </tr>
+  </tbody>
+</table>
 <% end %>
+<% end %>
+
+<p><%= link_to 'Home', root_path %></p>
+</div>
+
+
