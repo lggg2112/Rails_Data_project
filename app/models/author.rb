@@ -8,4 +8,5 @@ class Author < ApplicationRecord
 
   validates :name, :address, :email, :phonenumber, :nationality, presence: true
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
+
 end

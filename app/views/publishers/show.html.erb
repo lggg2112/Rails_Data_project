@@ -1,26 +1,28 @@
 <div class="container">
   <p id="notice"></p>
     <h1><%=@publisher.name %></h1>
-</div>
-<h3>Author</h3>
+
+<h3>Authors List</h3>
   <ul>
   <% @publisher.authors.each do |author| %>
     <li><%= link_to author.name, author %></li>
   <% end %>
 </ul>
 
-<h3>Employee</h3>
+<h3>Employees List</h3>
 <ul>
   <% @publisher.employees.each do |employee| %>
     <li><%= link_to employee.name, employee %></li>
   <% end %>
 </ul>
 
- <h3>Books</h3>
+ <h3>Books List</h3>
 <ul>
   <% @publisher.books.each do |book| %>
     <li><%= link_to book.title, book %></li>
   <% end %>
 </ul>
 
+<p><%= link_to 'Back', :back %></p>
 <p><%= link_to 'Home', root_path %></p>
+</div>

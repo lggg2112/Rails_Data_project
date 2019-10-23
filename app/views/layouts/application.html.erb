@@ -29,7 +29,7 @@
           <li><div class="crop"></div></li>
           <li class="nav-item active"><a class="nav-link"><%= link_to 'FAQ', permalink_path(permalink: 'faq') %></a></li>
         </ul>
-         <%= form_tag books_path, :method => 'get' do %>
+         <%= form_tag authors_path, :method => 'get' do %>
           <%= text_field_tag :search, params[:search] %>
           <%= submit_tag "Search"%>
           <% end %>

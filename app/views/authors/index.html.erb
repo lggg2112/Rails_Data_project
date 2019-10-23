@@ -3,6 +3,9 @@
     <h1>Authors</h1>
 
 <%= paginate @authors %>
+ <% if @authors.empty?%>
+  <p> There are no Author </p>
+<% else %>
 <% @authors.each do |author| %>
 <table class="table">
   <thead>
@@ -29,6 +32,7 @@
       </tr>
   </tbody>
 </table>
+<% end %>
 <% end %>
 <%= paginate @authors %>
 <p><%= link_to 'Home', root_path %></p>

@@ -3,6 +3,9 @@
     <h1>Employees</h1>
 
 <%= paginate @employees %>
+<% if @employees.empty?%>
+  <p> There are no Employee </p>
+<% else %>
 <% @employees.each do |employee| %>
 <table class="table">
   <thead>
@@ -29,6 +32,7 @@
       </tr>
   </tbody>
 </table>
+<% end %>
 <% end %>
 
 <%= paginate @employees %>

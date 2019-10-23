@@ -3,6 +3,9 @@
     <h1>Publishers</h1>
 
 <%= paginate @publishers %>
+<% if @publishers.empty?%>
+  <p> There are no Publisher </p>
+<% else %>
 <% @publishers.each do |publisher| %>
 <table class="table">
   <thead>
@@ -27,6 +30,7 @@
       </tr>
   </tbody>
 </table>
+<% end %>
 <% end %>
 <p><%= link_to 'Home', root_path %></p>
 </div>
