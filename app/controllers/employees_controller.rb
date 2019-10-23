@@ -2,7 +2,7 @@
 
 class EmployeesController < ApplicationController
   def index
-    @employees = Employee.order(:name)
+    @employees = Employee.order(:name).page(params[:page])
   end
 
   def show
